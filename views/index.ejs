@@ -6,18 +6,32 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
     <script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.12.0/semantic.min.js"></script>
     <style>
-        body {
+/*        body {
             padding-top: 80px;
+            padding-left: 60px;
+        }*/
+
+        .ui .button {
+            width: 240px;
         }
     </style>
 </head>
 <body>
 
     <div class="ui segment">
-        <h1 class="ui header">User Authentication</h1>
-        <p>Login or Register with:</p>
-        <a href="/login" class="ui primary button"><i class='add user icon'></i>Login</a>
-        <a href="/signup" class="ui button"><i class='user icon'></i>Signup</a>
+    <div class='ui centered grid'>
+        <div class="ui four column row">
+            <h2 class='ui header'> Login or Register with:</h2>
+        </div>
+
+        <div class="ui four column row">
+            <a href="/login" class="ui primary button"><i class='add user icon'></i>Login</a> <br />
+            <a href="/signup" class="ui button"><i class='user icon'></i>Signup</a> <br />
+            <div class="ui github black button"><i class='github icon'></i>Login with GitHub</div> <br />
+            <div class="ui linkedin button"><i class="linkedin icon"></i>Login with LinkedIn</div> <br />
+        </div>
+
+    </div>
     </div>
 
 </body>

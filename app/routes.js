@@ -10,12 +10,10 @@ module.exports = function(app, passport) {
     });
 
     app.post('/login', passport.authenticate('local-login', {
-        // successRedirect : '/profile', // redirect to the secure profile section
-        // failureRedirect : '/login', // redirect back to the signup page if there is an error
-        // failureFlash : true // allow flash messages
-    }), function(req, res) {
-        console.log('in server login');
-    });
+        successRedirect : '/profile', // redirect to the secure profile section
+        failureRedirect : '/login', // redirect back to the signup page if there is an error
+        failureFlash : true // allow flash messages
+    }));
 
     // app.post('/login', function(req, res) {
     //     console.log('in server login');
@@ -32,9 +30,14 @@ module.exports = function(app, passport) {
         successRedirect : '/profile', // redirect to the secure profile section
         failureRedirect : '/signup', // redirect back to the signup page if there is an error
         failureFlash : true // allow flash messages
-    }), function(req, res) {
-        console.log('in server signup');
-    });
+    }));
+    // app.post('/signup', function(req, res, next) {
+    //     console.log('/signup');
+    //     passport.authenticate('local-signup', function(err, user, info) {
+    //         console.log(err);
+    //         return res.redirect('/profile');
+    //     });
+    // });
 
     // app.post('/signup', do all our passport stuff here);
 
