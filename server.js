@@ -15,6 +15,8 @@ var express = require('express'),
 
 mongoose.connect(configDB.url);
 
+require('./config/passport')(passport);
+
 // set up express
 app.use(morgan('dev'));     // log every request to the console
 app.use(cookieParser());    // read cookies (for authentication)

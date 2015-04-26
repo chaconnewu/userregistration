@@ -1,0 +1,42 @@
+<!-- views/login.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Authentication</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.12.0/semantic.min.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    <script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.12.0/semantic.min.js"></script>
+    <style>
+        body {
+            padding-top: 80px;
+        }
+    </style>
+</head>
+<body>
+<div class="ui segment">
+    <h1 class="ui header">Login</h1>
+    <form class="ui form" action="/login" method="post">
+        <div class="required field">
+            <label>Email/User name</label>
+            <div class="ui icon input">
+                <input type='text' placeholder="Email/User name">
+                <i class="user icon"></i>
+            </div>
+        </div>
+       <div class="required field">
+            <label>Password</label>
+            <div class="ui icon input">
+                <input type='password'>
+                <i class="lock icon"></i>
+            </div>
+        </div>
+        <input type='submit' class="ui blue submit button" value="Login" />
+    </form>
+    <div class='ui divider'></div>
+    <p>Need an account? <a href="/signup">Signup</a></p>
+    <p>Or go <a href="/">Home</a>.</p>
+
+</div>
+</body>
+</html>
+
