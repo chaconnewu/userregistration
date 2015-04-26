@@ -7,6 +7,18 @@ var userSchema = mongoose.Schema({
     local: {
         email: String,
         password: String
+    },
+    facebook: {
+        id: String,
+        token: String,
+        email: String,
+        name: String
+    },
+    github: {
+        id: String,
+        login: String,
+        name: String,
+        email: String
     }
 });
 

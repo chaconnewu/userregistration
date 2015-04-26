@@ -31,20 +31,33 @@ module.exports = function(app, passport) {
         failureRedirect : '/signup', // redirect back to the signup page if there is an error
         failureFlash : true // allow flash messages
     }));
-    // app.post('/signup', function(req, res, next) {
-    //     console.log('/signup');
-    //     passport.authenticate('local-signup', function(err, user, info) {
-    //         console.log(err);
-    //         return res.redirect('/profile');
-    //     });
-    // });
 
-    // app.post('/signup', do all our passport stuff here);
+    // Facebook
+    app.get('/auth/facebook', passport.authenticate('facebook', { scope : 'email' }));
+
+    app.get('/auth/facebook/callback', passport.authenticate('facebook', {
+        successRedirect : '/profile',
+        failureRedirect : '/'
+    }));
+
+    // GitHub
+    app.get('/auth/github', passport.authenticate('github', { scope : 'email' }));
+
+    app.get('/auth/github/callback', passport.authenticate('github', {
+        successRedirect : '/profile',
+        failureRedirect : '/'
+    }));
 
     app.get('/profile', isLoggedIn, function(req, res) {
+        console.log(req.user);
         res.render('profile.ejs', {
             user: req.user
         });
+    });
+
+    app.get('/logout', function(req, res) {
+        req.logout();
+        res.redirect('/');
     });
 };
 
